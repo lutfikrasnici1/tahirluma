@@ -1,0 +1,46 @@
+<div class="display-3 text-center text-underline pt-3 ">
+    Ürünler
+</div>
+<div class="row">
+    <div class="col-sm-1 col-lg-3"></div>
+    <div class="col-sm-10 col-lg-6 mt-3  bg-dark">
+        <form class="product-form">
+            <div class="display-6 text-white mb-1 p-2">Yeni ürün ekle</div>
+            <div class="mb-3">
+                <input type="text" class="form-control bg-dark text-white" name="productName" placeholder="Ürün adı" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control bg-dark text-white" name="productQuantity"
+                    placeholder="Ürün stok miktarı" required>
+            </div>
+
+            <button type="button" class="add-Product w-100 btn btn-outline-success mb-2">Kaydet</button>
+
+        </form>
+    </div>
+    <div class="col-sm-1 col-lg-3"></div>
+
+
+    <div class="col-sm-12 mt-3">
+        <table class="table table-dark table-striped container" id="products-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ürün adı</th>
+                    <th scope="col">Stok Miktarı</th>
+                    <th scope="col">İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in productsData %}
+                <tr>
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.productQuantity}}</td>
+                    <td><a href="/delproduct/{{item.id}}" class="btn btn-danger py-1 px-3">Sil</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

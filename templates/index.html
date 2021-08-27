@@ -1,0 +1,23 @@
+{% extends '/layout/layout.html' %}
+
+
+{% block content %}
+
+<div class="content h-100">
+<div class="row">
+
+    <div class="col-sm-12" id="urunler">
+        {% include 'includes/urunler.html' %}
+    </div>
+
+    <div class="col-sm-12" id="girdiler" hidden>
+        {% include 'includes/alimlar.html' %}
+    </div>
+
+    <div class="col-sm-12" id="ciktilar" hidden>
+        {% include 'includes/satimlar.html' %}
+    </div>
+</div>
+</div> 
+
+{% endblock %}
